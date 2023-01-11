@@ -1,7 +1,12 @@
-import { greetUser } from '$utils/greet';
+import { getAllCountries } from '$utils/apiCountries';
+
+import { appendItems, selectUsersCountry } from './domManipulation';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  const name = 'John Doe';
-  greetUser(name);
+  getAllCountries();
+
+  appendItems();
+
+  selectUsersCountry();
 });
