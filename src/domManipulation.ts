@@ -36,7 +36,7 @@ export async function appendItems() {
   countriesAs.forEach((domEl) => {
     domEl.addEventListener('click', () => {
       // Clean the phone element before adding a new one
-      selectedPhonePrefix?.firstChild.remove();
+      selectedPhonePrefix?.firstChild?.remove();
       allCountries.forEach((countryApi) => {
         const phoneNum: string = countryApi.idd.root + countryApi.idd.suffixes[0];
         const phoneNumString = document.createTextNode(phoneNum);
@@ -49,8 +49,4 @@ export async function appendItems() {
       });
     });
   });
-}
-
-export async function selectUsersCountry() {
-  const usersCountry = await getUsersCountry();
 }

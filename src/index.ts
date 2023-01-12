@@ -7,6 +7,4 @@ window.Webflow.push(() => {
   getAllCountries();
 
   appendItems();
-
-  selectUsersCountry();
 });
