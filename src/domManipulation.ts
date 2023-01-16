@@ -4,11 +4,12 @@ export async function appendItems() {
   const ALL_COUNTRIES = await getAllCountries();
   const countriesListDiv = document.querySelector('[data-element="list"]') as Node;
   const countryA = document.querySelector('[data-element="item"]') as Node;
+  const dropdownTrigger = document.querySelector('#w-dropdown-toggle-0') as HTMLElement;
 
   countriesListDiv?.removeChild(countryA);
 
   ALL_COUNTRIES.forEach((el) => {
-    const countryItem = countryA?.cloneNode(true) as Element;
+    const countryItem = countryA?.cloneNode(true) as HTMLElement;
     const countryName = el.name.common;
     countryItem.setAttribute('aria-label', countryName);
     countryItem.setAttribute('title', countryName);
@@ -31,7 +32,7 @@ export async function appendItems() {
 
   // When a country is selected from the dropdown is going to be chosen
   countriesAs.forEach((domEl) => {
-    domEl.addEventListener('click', () => {
+    domEl.addEventListener('click', (e) => {
       // Clean the phone element before adding a new one
       selectedPhonePrefix?.firstChild?.remove();
       ALL_COUNTRIES.forEach((countryApi) => {
