@@ -1,10 +1,8 @@
 import { getAllCountries } from '$utils/apiCountries';
 
-import { appendItems, selectUsersCountry } from './domManipulation';
+import { appendItems } from './domManipulation';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  getAllCountries();
-
   appendItems();
 });
