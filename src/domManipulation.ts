@@ -2,9 +2,7 @@ import { getAllCountries } from '$utils/apiCountries';
 
 export async function appendItems() {
   const ALL_COUNTRIES = await getAllCountries();
-
   const countriesListDiv = document.querySelector('[data-element="list"]') as Node;
-
   const countryA = document.querySelector('[data-element="item"]') as Node;
 
   countriesListDiv?.removeChild(countryA);
